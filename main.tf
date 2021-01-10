@@ -9,7 +9,7 @@ terraform {
 
 
 module "ec2ib-component" {
-  source = "./modules/ec2ib-component"
+  source = "https://gitlab.com/virtua-galaxy/terraform/ec2ib-component.git"
 
   data = yamlencode({
     phases = [{
