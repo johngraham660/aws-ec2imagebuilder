@@ -10,10 +10,10 @@ terraform {
 region = var.region
 module "ec2imagebuilder_ec2ib-component" {
   source  = "johngraham660/ec2imagebuilder/aws//modules/ec2ib-component?ref=0.0.1"
-
-  name = "RHEL7_OS-Update"
-  platform = "Linux"
-  description = "Updates the base RHEL image from Redhat Update Infrastructure (RHUI)"
   version = "0.0.1"
-  supported_os_version = "Red Hat Enterprise Linux 7"
+
+  #name = "RHEL7_OS-Update"
+  #platform = "Linux"
+  #description = "Updates the base RHEL image from Redhat Update Infrastructure (RHUI)"
+  #supported_os_version = "Red Hat Enterprise Linux 7"
 }
