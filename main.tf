@@ -8,5 +8,26 @@ terraform {
 }
 
 
-module ":wq!
+module "ec2ib-component" {
+  source = "./modules/ec2ib-component"
+
+  data = yamlencode({
+    phases = [{
+      name = "build"
+      steps = [{
+        action = "ExecuteBash"
+        inputs = {
+          commands = ["echo 'hello world'"]
+        }
+        name      = "example"
+        onFailure = "Continue"
+      }]
+    }]
+    schemaVersion = 1.0
+  })
+  name = "RHEL7_OS_Update"
+  platform = "Linux"
+  version = "0.0.1"
+  description = "Updates the base rhel image to the latest patch release provided by RHUI"
+}
 
