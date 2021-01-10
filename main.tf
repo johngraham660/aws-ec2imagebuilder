@@ -7,7 +7,9 @@ terraform {
   required_version = ">= 0.12.26"
 }
 
-region = var.region
+provider "aws" {
+  region = var.aws_region
+}
 
 module "ec2imagebuilder_ec2ib-component" {
   source  = "johngraham660/ec2imagebuilder/aws//modules/ec2ib-component"
