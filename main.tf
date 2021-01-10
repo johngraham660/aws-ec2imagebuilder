@@ -20,3 +20,8 @@ module "ec2imagebuilder_ec2ib-component" {
   #description = "Updates the base RHEL image from Redhat Update Infrastructure (RHUI)"
   #supported_os_version = "Red Hat Enterprise Linux 7"
 }
+
+module "ec2imagebuilder_ec2ib-infrastructure-configuration" {
+  source  = "johngraham660/ec2imagebuilder/aws//modules/ec2ib-infrastructure-configuration"
+  version = "0.0.1"
+}
