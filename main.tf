@@ -7,28 +7,12 @@ terraform {
   required_version = ">= 0.12.26"
 }
 
+module "ec2imagebuilder_ec2ib-component" {
+  source  = "johngraham660/ec2imagebuilder/aws//modules/ec2ib-component?ref=0.0.1"
 
-module "ec2ib-component" {
-  # source = "git::git@github.com:johngraham660/aws-ec2imagebuilder.git//modules/ec2ib-component?ref=v0.0.1"
-  source = "git::git@github.com:johngraham660/aws-ec2imagebuilder.git//modules/ec2ib-component?ref=development"
-
-  data = yamlencode({
-    phases = [{
-      name = "build"
-      steps = [{
-        action = "ExecuteBash"
-        inputs = {
-          commands = ["echo 'hello world'"]
-        }
-        name      = "example"
-        onFailure = "Continue"
-      }]
-    }]
-    schemaVersion = 1.0
-  })
-  name = "RHEL7_OS_Update"
+  name = "RHEL7_OS-Update"
   platform = "Linux"
+  description = "Updates the base RHEL image from Redhat Update Infrastructure (RHUI)"
   version = "0.0.1"
-  description = "Updates the base rhel image to the latest patch release provided by RHUI"
+  supported_os_version = "Red Hat Enterprise Linux 7"
 }
-
