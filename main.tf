@@ -9,7 +9,8 @@ terraform {
 
 
 module "ec2ib-component" {
-  source = "https://gitlab.com/virtua-galaxy/terraform/ec2ib-component.git"
+  # source = "git::git@github.com:johngraham660/aws-ec2imagebuilder.git//modules/ec2ib-component?ref=v0.0.1"
+  source = "git::git@github.com:johngraham660/aws-ec2imagebuilder.git//modules/ec2ib-component?ref=development"
 
   data = yamlencode({
     phases = [{
