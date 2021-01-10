@@ -13,7 +13,7 @@ provider "aws" {
 
 module "ec2imagebuilder_ec2ib-component" {
   source  = "johngraham660/ec2imagebuilder/aws//modules/ec2ib-component"
-  version = "0.0.1"
+  version = "0.0.2"
 
   #name = "RHEL7_OS-Update"
   #platform = "Linux"
@@ -23,5 +23,5 @@ module "ec2imagebuilder_ec2ib-component" {
 
 module "ec2imagebuilder_ec2ib-infrastructure-configuration" {
   source  = "johngraham660/ec2imagebuilder/aws//modules/ec2ib-infrastructure-configuration"
-  version = "0.0.1"
+  version = "0.0.2"
 }
