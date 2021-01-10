@@ -8,6 +8,7 @@ terraform {
 }
 
 region = var.region
+
 module "ec2imagebuilder_ec2ib-component" {
   source  = "johngraham660/ec2imagebuilder/aws//modules/ec2ib-component?ref=0.0.1"
   version = "0.0.1"
